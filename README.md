@@ -1,68 +1,169 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Lableby Front-End Coding Challenge
 
-## Available Scripts
+![osheaga](https://files-8ijdy0erg.vercel.app/Screen%20Shot%202020-09-06%20at%209.41.57%20PM.png)
 
-In the project directory, you can run:
+As part of the suite of tooling we are building in lableby is a management app for delivery managers that they can use to track current deliveries.
 
-### `npm start`
+Your challenge is to build a front-end app in React.js that will display the order list view. 
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Functional requirements
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- Has a basic layout that will show the order list on the left and the order details on the right.
+- When selecting an order the order details should show the order information as designed in the image.
 
-### `npm test`
+## Non-functional requirements
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Challenge is submitted as pull request against this repo ([fork it](https://help.github.com/articles/fork-a-repo/) and [create a pull request](https://help.github.com/articles/creating-a-pull-request-from-a-fork/).
+- The microsite should be deployed to [Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs).
 
-### `npm run build`
+### Bonus
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* Localization: support for multiple languages (English, French, ...)
+* Responsive design
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### Remarks
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* You can setup your microsite any way you like; we're partial to NodeJS, ExpressJS and React
+* CSS can be written using SASS, LESS or similar higher-level language
+* You can ignore the real time nature of the map, just displaying the mark of the driver is enough.
+* The buttons can be just displayed.
 
-### `npm run eject`
+### Things that are important to us
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Code quality, maintainability and readability
+- Attention to the User Experience
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Things you'll not be evaluated on
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Features we didn't list in this README
+- The quantity of code you write
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+# Documentation
 
-## Learn More
+## Supporting Data
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The following is an example of order details response, you can use it to feed your components:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+{
+  "orders": [
+    {
+      "courier": null,
+      "customer": {
+        "name": "Karim L.",
+        "fullAddress": "Tunis, Tunisia",
+        "id": "ckerkubem04aq07087wy956x5",
+        "latitude": 36.8386634,
+        "longitude": 10.2392804,
+        "phoneNumber": "11111111"
+      },
+      "id": "ckerkubcm04aj07088iq517b2",
+      "orderItems": [
+        {
+          "id": "ckerkubdh04ak07084vr8oa7y",
+          "name": "Sandwich Latino",
+          "price": 8.5
+        },
+        {
+          "id": "ckerkube904an0708hjzzz53a",
+          "name": "Crispy Beef Chicken Onion Burger",
+          "price": 9
+        }
+      ],
+      "orderType": "DELIVERY",
+      "reference": "882178960",
+      "restaurant": {
+        "fullAddress": "Avenue de Hédi Nouira, Ariana 2001",
+        "id": "cjn94mdtq4qr50b68pppdf116",
+        "latitude": 36.8614427,
+        "logoImg": "https://files-bocui07th.vercel.app/download%20(1).png",
+        "longitude": 10.1642221,
+        "name": "Baguette & Baguette Ennaser"
+      },
+      "status": "NEW"
+    },
+    {
+      "courier": {
+        "id": "ckerkubem04aq07087wy956x5",
+        "name": "Ahmed",
+        "latitude": 36.8386636,
+        "longitude": 10.2392804
+      },
+      "customer": {
+        "name": "Samar B.",
+        "fullAddress": "Tunis, Tunisia",
+        "id": "ckerkubem04aq07087wy956x5",
+        "latitude": 36.8386634,
+        "longitude": 10.2392804,
+        "phoneNumber": "11111111"
+      },
+      "id": "ckerkubcm04aj07088iq517b2",
+      "orderItems": [
+        {
+          "id": "ckerkubdh04ak07084vr8oa7y",
+          "name": "Sandwich Fermier",
+          "price": 8.5
+        }
+      ],
+      "orderType": "DELIVERY",
+      "reference": "882178961",
+      "restaurant": {
+        "fullAddress": "Avenue de Hédi Nouira, Ariana 2001",
+        "id": "cjn94mdtq4qr50b68pppdf116",
+        "latitude": 36.8614427,
+        "logoImg": "https://files-bocui07th.vercel.app/download%20(1).png",
+        "longitude": 10.1642221,
+        "name": "Baguette & Baguette Ennaser"
+      },
+      "status": "EN_ROUTE"
+    },
+    {
+      "courier": {
+        "id": "ckerkubem04aq07087wy956x5",
+        "name": "Chakib",
+        "latitude": 36.8386636,
+        "longitude": 10.2392804
+      },
+      "customer": {
+        "name": "Manel B.",
+        "fullAddress": "Tunis, Tunisia",
+        "id": "ckerkubem04aq07087wy956x5",
+        "latitude": 36.8386634,
+        "longitude": 10.2392804,
+        "phoneNumber": "11111111"
+      },
+      "id": "ckerkubcm04aj07088iq517b2",
+      "orderItems": [
+        {
+          "id": "ckerkubdh04ak07084vr8oa7y",
+          "name": "Chicken Burger",
+          "price": 12
+        }
+      ],
+      "orderType": "DELIVERY",
+      "reference": "882178961",
+      "restaurant": {
+        "fullAddress": "Avenue de Hédi Nouira, Ariana 2001",
+        "id": "cjn94mdtq4qr50b68pppdf116",
+        "latitude": 36.8614427,
+        "logoImg": "https://files-bocui07th.vercel.app/download%20(1).png",
+        "longitude": 10.1642221,
+        "name": "Baguette & Baguette Ennaser"
+      },
+      "status": "DELIVERED"
+    }
+  ]
+}
+```
 
-### Code Splitting
+`status` can be the following: 
+  - NEW
+  - PREPARING
+  - READY_FOR_PICKUP
+  - PICKED_UP
+  - EN_ROUTE
+  - DELIVERED
+  - CANCELLED
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+Good luck ;)
 
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
