@@ -1,0 +1,49 @@
+
+.delivery {
+    padding: 1.5rem 0;
+  }
+  
+  .delivery__h3 {
+    margin-bottom: 1.5rem;
+    padding: 0 1rem;
+  }
+  
+  .delivery__p {
+    color: #9e9e9e;
+    margin: 0.5rem 0;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+  
+  .delivery__number {
+    color: #000;
+  }
+  
+  .delivery__list-item{
+    padding: 0 1rem;
+    cursor: pointer;
+
+  }
+  
+  .list-item__container{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #d3d3d3;
+    padding: 1rem 0;
+  }
+  
+  .delivery__list-item:hover{
+    background-color: #EAE4DE;
+  }
+  
+  
+  
+  .delivery__list li:last-of-type .list-item__container{
+    border-bottom: none;
+  }
+  
+  .order-items, .order-time {
+    color: #9e9e9e;
+  }

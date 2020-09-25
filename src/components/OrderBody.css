@@ -1,0 +1,107 @@
+
+.progressbar {
+    counter-reset: step;
+}
+.progressbar li {
+    list-style-type: none;
+    width: 25%;
+    float: left;
+    position: relative;
+    text-align: center;
+    color: #DFDFDF;
+    margin: 4rem 0 2rem;
+}
+.progressbar li:after {
+    width: 30px;
+    height: 30px;
+    content: counter(step);
+    counter-increment: step;
+    line-height: 30px;
+    border: 2px solid #DFDFDF;
+    display: block;
+    text-align: center;
+    margin: 0 auto 10px auto;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    left: calc(50% - 17px);
+    bottom: 15px;
+}
+.progressbar li:before {
+    width: calc(100% - 30px);
+    height: 5px;
+    content: '';
+    position: absolute;
+    background-color: #DFDFDF;
+    top: -24px;
+    left: calc(-50% + 17px);
+    z-index: 0;
+}
+.progressbar li:first-child:before {
+    content: none;
+}
+.progressbar li.active {
+    color: #724A20;
+}
+.progressbar li.active:after {
+    border-color: #724A20;
+    background-color: #724A20;
+    color: #fff;
+}
+.progressbar li.active + li:before {
+    background-color: #724A20;
+}
+
+.progressbar .inactive:before {
+    background-color: #DFDFDF !important;
+}
+
+.map-container{
+    height: 47vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e2e2e2;
+    clear: both;
+}
+
+.leaflet-container {
+    width: 100%;
+    height: 47vh;
+}
+
+.adresses{
+    font-weight: 400;
+    margin: 1rem;
+}
+
+.filled-circle, .outlined-circle{
+    width: 12px;
+    height: 12px;
+    border: 2px solid #724A20;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 0.5rem 0 0.2rem;
+}
+
+.filled-circle{
+    background-color: #724A20;
+}
+
+.btn{
+    margin: 0 1rem 1rem 1rem;
+    width: calc(100% - 2rem);
+    height: 2.5rem;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    background-color: #724A20;
+    font-size: 1rem;
+
+}
+
+.btn:hover, .phone-icon:hover{
+    background-color: #724a20ea;
+}
